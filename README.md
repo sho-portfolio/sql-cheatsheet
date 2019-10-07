@@ -21,14 +21,15 @@
 * SQL example: SELECT * FROM Customers WHERE City LIKE '[bp]%'; (returns all cities that start with the letter b or p)
 
 ## Case Statement
-
+```
 CASE
  WHEN condition1 THEN result1
  WHEN condition2 THEN result2
  WHEN conditionN THEN resultN
  ELSE result
 END;
-
+```
+```
 SELECT CustomerName, City, Country
 FROM Customers
 ORDER BY
@@ -36,15 +37,16 @@ ORDER BY
     WHEN City IS NULL THEN Country
     ELSE City
 END);
-
+```
 
 ## Running Totals
+```
 CREATE TABLE Students
 (
-	Id INT IDENTITY,
+  Id INT IDENTITY,
   Name VARCHAR (50),
-	Gender VARCHAR (50),
-	Age INT,
+  Gender VARCHAR (50),
+  Age INT,
   PRIMARY KEY (Id)
 );
 
@@ -69,6 +71,7 @@ FROM Students;
 SELECT Id, Name, Gender, Age,
 SUM (Age) OVER (PARTITION BY Gender ORDER BY Id) AS RunningAgeTotal
 FROM Students
+```
 
 # Useful resources and references
 https://www.w3schools.com/sql/
