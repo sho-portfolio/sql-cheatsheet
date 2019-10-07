@@ -74,7 +74,7 @@ FROM Students
 ```
 
 # Useful resources and references
-https://www.w3schools.com/sql/
-https://www.toptal.com/designers/htmlarrows/punctuation/
-https://codingsight.com/calculating-running-total-with-over-clause-and-partition-by-clause-in-sql-server/
-
+- https://www.w3schools.com/sql/
+- https://www.toptal.com/designers/htmlarrows/punctuation/
+- https://codingsight.com/calculating-running-total-with-over-clause-and-partition-by-clause-in-sql-server/
+- https://help.github.com/en/articles/basic-writing-and-formatting-syntax
