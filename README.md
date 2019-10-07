@@ -21,7 +21,9 @@
 * SQL example: SELECT * FROM Customers WHERE City LIKE '[bp]%'; (returns all cities that start with the letter b or p)
 
 ## Case Statement
+
 CASE
+
     WHEN condition1 THEN result1
     
     WHEN condition2 THEN result2
@@ -29,6 +31,7 @@ CASE
     WHEN conditionN THEN resultN
     
     ELSE result
+
 END;
 
 SELECT CustomerName, City, Country
