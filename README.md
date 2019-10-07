@@ -41,7 +41,7 @@ END);
 
 ## Running Totals
 [![sql fiddle running total video](misc/sql-fiddle-image.jpeg)](https://youtu.be/qDddVDDPf_w)
-<br>[watch video demonstrating how (code is below)]
+<br>[click image to watch a video demonstration (code is below)]
 
 ```
 CREATE TABLE Students
