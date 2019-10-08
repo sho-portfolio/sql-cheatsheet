@@ -106,7 +106,21 @@ ON PersonCTE.BusinessEntityID = PhoneCTE.BusinessEntityID;
 ### Recursive Common Table Expression Example
 ![join-types](misc/sql-recursive-CTE-Image.png)
 <br/>[Sourced from artcle by Kris Wenzel (see resources below)]
+<br/><br/> To try this in sqlfiddle.com put the first block of code (below) into the schema window and the second block into the 'run sql' window
+```
+WITH vCTE
+AS (SELECT 1 AS N
+  UNION ALL
+  SELECT N+1
+  FROM vCTE
+  WHERE N < 50
+)
+SELECT N INTO tblCTE FROM vCTE;
+```
 
+```
+SELECT * FROM tblCTE
+```
 # Useful resources and references
 - https://www.w3schools.com/sql/
 - https://www.toptal.com/designers/htmlarrows/punctuation/
