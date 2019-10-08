@@ -39,7 +39,7 @@ ORDER BY
 END);
 ```
 
-## Running Totals
+## Running Totals (Window Function)
 [![sql fiddle running total video](misc/sql-fiddle-image.jpeg)](https://youtu.be/qDddVDDPf_w)
 <br>[click image to watch a video demonstration (code is below)]
 
@@ -75,6 +75,61 @@ SELECT Id, Name, Gender, Age,
 SUM (Age) OVER (PARTITION BY Gender ORDER BY Id) AS RunningAgeTotal
 FROM Students
 ```
+
+## Rank (Window Function)
+
+(http://sqlfiddle.com/#!18/05a09/8/0)
+
+```
+create table olympics (
+  sport varchar(20), 
+  athlete varchar(20), 
+  position int
+)
+
+insert into olympics select '100m Sprint', 'Tom A', '5'
+insert into olympics select '100m Sprint', 'Pete A', '4'
+insert into olympics select '100m Sprint', 'Andy A', '3'
+insert into olympics select '100m Sprint', 'Jack A', '2'
+insert into olympics select '100m Sprint', 'Jon A', '1'
+insert into olympics select 'Fencing', 'Tom A', '5'
+insert into olympics select 'Fencing', 'Pete A', '4'
+insert into olympics select 'Fencing', 'Andy A', '3'
+insert into olympics select 'Fencing', 'Jack A', '2'
+insert into olympics select 'Fencing', 'Jon A', '1'
+```
+
+```
+SELECT * FROM olympics;
+
+--get rank for all athletes (notice that pos_rank is the same 
+--for athletes in different sports and it goes from 1 to 3
+SELECT *,
+RANK() OVER (ORDER BY position ASC) pos_rank
+FROM olympics;
+
+--get rank for all athletes by sport
+SELECT *,
+RANK() OVER (PARTITION BY sport ORDER BY position ASC) pos_rank
+FROM olympics;
+
+--get rank for all athletes by sport, but only the top 3 athletes 
+select * from
+(
+  SELECT *,
+  RANK() OVER (PARTITION BY sport ORDER BY position ASC) pos_rank
+  FROM olympics
+) ranked_qry
+WHERE pos_rank <= 3;
+
+```
+
+
+
+## List of Window Funtions
+VALUE: first_value(), lag(), last_value(), lead()
+AGGREGATE: avg(), count(), max(), min()
+RANK: rank(), row_num(), cume_dist(), dense_rank(), percent_rank(), ntile()
 
 ## Common Table Expressions (CTE)
 ```
@@ -129,5 +184,6 @@ SELECT * FROM tblCTE
 - https://www.essentialsql.com/introduction-common-table-expressions-ctes/
 - https://www.essentialsql.com/non-recursive-ctes/
 - https://www.essentialsql.com/recursive-ctes-explained/
-
+- http://www.sqlservertutorial.net/sql-server-window-functions/
+- 
 
