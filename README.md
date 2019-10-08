@@ -76,8 +76,43 @@ SUM (Age) OVER (PARTITION BY Gender ORDER BY Id) AS RunningAgeTotal
 FROM Students
 ```
 
+## Common Table Expressions (CTE)
+```
+WITH TableExpressionName (Column1, Column2, …, ColumnN)
+AS
+(Query Definition)
+```
+### Non-Recursive Common Table Expression Example
+```
+WITH   PersonCTE (BusinessEntityID, FirstName, LastName)
+AS     (SELECT Person.BusinessEntityID,
+               FirstName,
+               LastName
+        FROM   Person.Person
+        WHERE  LastName LIKE 'C%'),
+PhoneCTE (BusinessEntityID, PhoneNumber)
+AS     (SELECT BusinessEntityID,
+               PhoneNumber
+        FROM   Person.PersonPhone)
+SELECT FirstName,
+       LastName,
+       PhoneNumber
+FROM   PersonCTE
+INNER JOIN
+PhoneCTE
+ON PersonCTE.BusinessEntityID = PhoneCTE.BusinessEntityID;
+```
+
+### Recursive Common Table Expression Example
+
+
 # Useful resources and references
 - https://www.w3schools.com/sql/
 - https://www.toptal.com/designers/htmlarrows/punctuation/
 - https://codingsight.com/calculating-running-total-with-over-clause-and-partition-by-clause-in-sql-server/
 - https://help.github.com/en/articles/basic-writing-and-formatting-syntax
+- https://www.essentialsql.com/introduction-common-table-expressions-ctes/
+- https://www.essentialsql.com/non-recursive-ctes/
+- https://www.essentialsql.com/recursive-ctes-explained/
+
+
