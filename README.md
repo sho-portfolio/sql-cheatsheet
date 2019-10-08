@@ -127,9 +127,9 @@ WHERE pos_rank <= 3;
 
 
 ## List of Window Funtions
--VALUE: first_value(), lag(), last_value(), lead()
--AGGREGATE: avg(), count(), max(), min()
--RANK: rank(), row_num(), cume_dist(), dense_rank(), percent_rank(), ntile()
+- VALUE: first_value(), lag(), last_value(), lead()
+- AGGREGATE: avg(), count(), max(), min()
+- RANK: rank(), row_num(), cume_dist(), dense_rank(), percent_rank(), ntile()
 
 ## Common Table Expressions (CTE)
 ```
