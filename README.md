@@ -8,6 +8,64 @@
 
 ![join-types](misc/sql-join-types.png)
 
+* You can access the code for the join examples below here: http://sqlfiddle.com/#!9/211a92/3/0
+
+tablePerson
+----------------    
+PersonId | Name
+---------|-------
+1        | Adam
+2        | Sue
+3        | Bill
+4        | Anne
+
+tableGrade
+--------------------------- 
+GradeId | PersonId | Grade
+--------|----------|-------
+1       | 1        | 5
+2       | 1        | 7
+3       | 2        | 1
+4       | 4        | 0
+5       | 4        | 9
+6       | 5        | 3
+
+
+* INNER JOIN EXAMPLE
+```SQL
+SELECT A.PersonId, A.Name, B.GradeId, B.PersonId, B.Grade
+FROM tablePerson A
+INNER JOIN tableGrade B ON A.PersonId = B.PersonId
+```
+
+-----------------------------------------------    
+PersonId | Name  | GradeId | PersonId | Grade |
+---------|-------|---------|----------|-------|
+1        | Adam  | 1       | 1        | 5     |
+1        | Adam  | 2       | 1        | 7     |
+2        | Sue   | 3       | 2        | 1     |
+4        | Anne  | 4       | 4        | 0     |
+4        | Anne  | 5       | 4        | 9     |
+
+Note that Bill does not appear in the results and nor does PersonId 5 (from the tableGrade table)
+
+
+* LEFT OUTER JOIN EXAMPLE
+```SQL
+SELECT * 
+FROM tablePerson A
+LEFT OUTER JOIN tableGrade B ON A.id = B.id
+```
+-----------------------------------------------    
+PersonId | Name  | GradeId | PersonId | Grade |
+---------|-------|---------|----------|-------|
+1        | Adam  | 1       | 1        | 5     |
+1        | Adam  | 2       | 1        | 7     |
+2        | Sue   | 3       | 2        | 1     |
+4        | Anne  | 4       | 4        | 0     |
+4        | Anne  | 5       | 4        | 9     |
+3        | Bill  | (null)  | (null)   | (null)|
+
 
 
 ## Wildcards
