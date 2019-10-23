@@ -8,7 +8,9 @@
 
 ![join-types](misc/sql-join-types.png)
 
-* You can access the code for the join examples below here: http://sqlfiddle.com/#!9/211a92/3/0
+* You can access the code for the join examples below here: 
+For MySQL: http://sqlfiddle.com/#!9/be4457/6/0
+For SQLServer: http://sqlfiddle.com/#!18/cd870/3/0
 
 tablePerson
 ----------------    
@@ -52,7 +54,7 @@ Note that Bill does not appear in the results and nor does PersonId 5 (from the 
 
 * LEFT OUTER JOIN EXAMPLE
 ```SQL
-SELECT * 
+SELECT A.PersonId, A.Name, B.GradeId, B.PersonId, B.Grade
 FROM tablePerson A
 LEFT OUTER JOIN tableGrade B ON A.id = B.id
 ```
@@ -65,6 +67,50 @@ PersonId | Name  | GradeId | PersonId | Grade |
 4        | Anne  | 4       | 4        | 0     |
 4        | Anne  | 5       | 4        | 9     |
 3        | Bill  | (null)  | (null)   | (null)|
+
+
+* RIGHT OUTER JOIN EXAMPLE
+```SQL
+SELECT A.PersonId, A.Name, B.GradeId, B.PersonId, B.Grade
+FROM tablePerson A
+RIGHT OUTER JOIN tableGrade B ON A.id = B.id
+```
+-----------------------------------------------    
+PersonId | Name  | GradeId | PersonId | Grade |
+---------|-------|---------|----------|-------|
+1        | Adam  | 1       | 1        | 5     |
+1        | Adam  | 2       | 1        | 7     |
+2        | Sue   | 3       | 2        | 1     |
+4        | Anne  | 4       | 4        | 0     |
+4        | Anne  | 5       | 4        | 9     |
+(null)   | (null)| 6       | 5        | 3     |
+
+* FULL OUTER JOIN EXAMPLE (NOT AVAILABLE IN MY-SQL)
+```SQL
+SELECT A.PersonId, A.Name, B.GradeId, B.PersonId, B.Grade
+FROM tablePerson A
+FULLL OUTER JOIN tableGrade B ON A.id = B.id
+```
+```SQL
+--EQUIVALENT CODE FOR MYSQL
+SELECT A.PersonId, A.Name, B.GradeId, B.PersonId, B.Grade
+FROM tablePerson A
+LEFT OUTER JOIN tableGrade B ON A.PersonId = B.PersonId
+UNION
+SELECT A.PersonId, A.Name, B.GradeId, B.PersonId, B.Grade
+FROM tablePerson A
+RIGHT OUTER JOIN tableGrade B ON A.PersonId = B.PersonId;
+```
+-----------------------------------------------    
+PersonId | Name  | GradeId | PersonId | Grade |
+---------|-------|---------|----------|-------|
+1        | Adam  | 1       | 1        | 5     |
+1        | Adam  | 2       | 1        | 7     |
+2        | Sue   | 3       | 2        | 1     |
+3        | Bill  | (null)  | (null)   | (null)|
+4        | Anne  | 4       | 4        | 0     |
+4        | Anne  | 5       | 4        | 9     |
+(null)   | (null)| 6       | 5        | 3     |
 
 
 
@@ -243,5 +289,3 @@ SELECT * FROM tblCTE
 - https://www.essentialsql.com/non-recursive-ctes/
 - https://www.essentialsql.com/recursive-ctes-explained/
 - http://www.sqlservertutorial.net/sql-server-window-functions/
-- 
-
