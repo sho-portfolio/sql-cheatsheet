@@ -16,7 +16,7 @@ For SQLServer: http://sqlfiddle.com/#!18/cd870/3/0
 
 ### Join Examples
 
-tablePerson
+* tablePerson
 ----------------    
 PersonId | Name
 ---------|-------
@@ -25,7 +25,7 @@ PersonId | Name
 3        | Bill
 4        | Anne
 
-tableGrade
+* tableGrade
 --------------------------- 
 GradeId | PersonId | Grade
 --------|----------|-------
