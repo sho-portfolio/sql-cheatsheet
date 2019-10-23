@@ -1,6 +1,8 @@
 # SQL Cheatsheet
 
 ## Joins
+
+### Join Types
 * (inner) join
 * left (outer) join
 * right (outer) join
@@ -11,6 +13,8 @@
 * You can access the code for the join examples below here: 
 For MySQL: http://sqlfiddle.com/#!9/be4457/6/0
 For SQLServer: http://sqlfiddle.com/#!18/cd870/3/0
+
+### Join Examples
 
 tablePerson
 ----------------    
