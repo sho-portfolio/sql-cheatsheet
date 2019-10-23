@@ -284,6 +284,15 @@ SELECT N INTO tblCTE FROM vCTE;
 ```
 SELECT * FROM tblCTE
 ```
+
+# To do
+- INDEXING
+- REGEX
+- BCP
+- STRING MANIPULATION
+- TXT / CSV FILE UPLOAD TO MYSQL
+
+
 # Useful resources and references
 - https://www.w3schools.com/sql/
 - https://www.toptal.com/designers/htmlarrows/punctuation/
