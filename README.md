@@ -270,6 +270,8 @@ ON PersonCTE.BusinessEntityID = PhoneCTE.BusinessEntityID;
 ![join-types](misc/sql-recursive-CTE-Image.png)
 <br/>[Sourced from artcle by Kris Wenzel (see resources below)]
 <br/><br/> To try this in sqlfiddle.com put the first block of code (below) into the schema window and the second block into the 'run sql' window (make sure you're using SQL Server as the DBMS)
+
+* EXAMPLE 1
 ```
 WITH vCTE
 AS (SELECT 1 AS N
@@ -282,6 +284,20 @@ SELECT N INTO tblCTE FROM vCTE;
 ```
 
 ```
+SELECT * FROM tblCTE
+```
+
+* EXAMPLE 2
+```SQL
+WITH vCTE (cntr)
+AS (
+  SELECT 1
+  UNION ALL 
+  SELECT cntr + 1 FROM vCTE WHERE cntr < 10
+)
+SELECT cntr INTO tblCTE FROM vCTE;
+```
+```SQL
 SELECT * FROM tblCTE
 ```
 
