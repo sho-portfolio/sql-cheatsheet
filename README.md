@@ -269,7 +269,7 @@ ON PersonCTE.BusinessEntityID = PhoneCTE.BusinessEntityID;
 ### Recursive Common Table Expression Example
 ![join-types](misc/sql-recursive-CTE-Image.png)
 <br/>[Sourced from artcle by Kris Wenzel (see resources below)]
-<br/><br/> To try this in sqlfiddle.com put the first block of code (below) into the schema window and the second block into the 'run sql' window
+<br/><br/> To try this in sqlfiddle.com put the first block of code (below) into the schema window and the second block into the 'run sql' window (make sure you're using SQL Server as the DBMS)
 ```
 WITH vCTE
 AS (SELECT 1 AS N
