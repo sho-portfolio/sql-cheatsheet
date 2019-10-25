@@ -269,7 +269,7 @@ ON PersonCTE.BusinessEntityID = PhoneCTE.BusinessEntityID;
 ### Recursive Common Table Expression Example
 ![join-types](misc/sql-recursive-CTE-Image.png)
 <br/>[Sourced from artcle by Kris Wenzel (see resources below)]
-<br/><br/> To try this in sqlfiddle.com put the first block of code (below) into the schema window and the second block into the 'run sql' window (make sure you're using SQL Server as the DBMS)
+<br/><br/> To try this in sqlfiddle.com put the first block of code (below) into the schema window and the second block into the 'run sql' window (make sure you're using SQL Server as the DBMS).  (Note that the only reason we insert into a table in these examples is becuase sqlfiddle does not all you to mix DDL and DML - dont worry if you dont understand this).
 
 * EXAMPLE 1
 ```SQL
@@ -300,6 +300,17 @@ SELECT cntr INTO tblCTE FROM vCTE;
 ```SQL
 SELECT * FROM tblCTE
 ```
+* EXAMPLE 3 (MYSQL example - won't work in SQLFiddle as the current version of MYSQL is 5.6 which doesn't support CTE)
+```SQL
+WITH RECURSIVE my_cte AS
+(
+  SELECT 1 AS n
+  UNION ALL
+  SELECT 1+n FROM my_cte WHERE n<10
+)
+SELECT * FROM my_cte;
+'''
+
 
 # To do
 - [ ] TURN THIS INTO A MEDIUM ARTICLE
