@@ -11,8 +11,8 @@
 ![join-types](misc/sql-join-types.png)
 
 * You can access the code for the join examples below here: 
-For MySQL: http://sqlfiddle.com/#!9/be4457/6/0
-For SQLServer: http://sqlfiddle.com/#!18/cd870/3/0
+  * For MySQL: http://sqlfiddle.com/#!9/be4457/6/0
+  * For SQLServer: http://sqlfiddle.com/#!18/cd870/3/0
 
 ### Join Examples
 
@@ -286,19 +286,26 @@ SELECT * FROM tblCTE
 ```
 
 # To do
-- INDEXING
-- REGEX
-- BCP
-- STRING MANIPULATION
-- TXT / CSV FILE UPLOAD TO MYSQL
+- [ ] TURN THIS INTO A MEDIUM ARTICLE
+- [ ] INDEXING
+- [ ] REGEX
+- [ ] BCP
+- [ ] STRING MANIPULATION
+- [ ] TXT / CSV FILE UPLOAD TO MYSQL
+- [ ] TRANSACTION COMMIT / ROLLBACK
+- [ ] TXT / CSV FILE UPLOAD TO MYSQL
+- [ ] TYPES OF SQL (DDL (CREATE TABLE), DML (SELECT, JOIN, UPDATE), DCL (GRANT ACCESS TO), TCL (TRANSACTION, COMMIT)
 
 
 # Useful resources and references
 - https://www.w3schools.com/sql/
-- https://www.toptal.com/designers/htmlarrows/punctuation/
 - https://codingsight.com/calculating-running-total-with-over-clause-and-partition-by-clause-in-sql-server/
-- https://help.github.com/en/articles/basic-writing-and-formatting-syntax
 - https://www.essentialsql.com/introduction-common-table-expressions-ctes/
 - https://www.essentialsql.com/non-recursive-ctes/
 - https://www.essentialsql.com/recursive-ctes-explained/
 - http://www.sqlservertutorial.net/sql-server-window-functions/
+- https://www.toptal.com/designers/htmlarrows/punctuation/
+- https://help.github.com/en/articles/basic-writing-and-formatting-syntax
+- https://github.com/tchapi/markdown-cheatsheet/blob/master/README.md
+- https://www.youtube.com/watch?v=2Fn0WAyZV0E&list=PL-iyibqkl8u22OzA-sbXeTg2Z6nqOKT_l&index=10&t=0s
+
