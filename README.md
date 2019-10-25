@@ -129,7 +129,7 @@ PersonId | Name  | GradeId | PersonId | Grade |
 * SQL example: SELECT * FROM Customers WHERE City LIKE '[bp]%'; (returns all cities that start with the letter b or p)
 
 ## Case Statement
-```
+```SQL
 CASE
  WHEN condition1 THEN result1
  WHEN condition2 THEN result2
@@ -137,7 +137,7 @@ CASE
  ELSE result
 END;
 ```
-```
+```SQL
 SELECT CustomerName, City, Country
 FROM Customers
 ORDER BY
@@ -151,7 +151,7 @@ END);
 [![sql fiddle running total video](misc/sql-fiddle-image.jpeg)](https://youtu.be/qDddVDDPf_w)
 <br>[click image to watch a video demonstration (code is below)]
 
-```
+```SQL
 CREATE TABLE Students
 (
   Id INT IDENTITY,
@@ -188,7 +188,7 @@ FROM Students
 
 (http://sqlfiddle.com/#!18/05a09/8/0)
 
-```
+```SQL
 create table olympics (
   sport varchar(20), 
   athlete varchar(20), 
@@ -207,7 +207,7 @@ insert into olympics select 'Fencing', 'Jack A', '2'
 insert into olympics select 'Fencing', 'Jon A', '1'
 ```
 
-```
+```SQL
 SELECT * FROM olympics;
 
 --get rank for all athletes (notice that pos_rank is the same 
@@ -240,13 +240,13 @@ WHERE pos_rank <= 3;
 - RANK: rank(), row_num(), cume_dist(), dense_rank(), percent_rank(), ntile()
 
 ## Common Table Expressions (CTE)
-```
+```SQL
 WITH TableExpressionName (Column1, Column2, …, ColumnN)
 AS
 (Query Definition)
 ```
 ### Non-Recursive Common Table Expression Example
-```
+```SQL
 WITH   PersonCTE (BusinessEntityID, FirstName, LastName)
 AS     (SELECT Person.BusinessEntityID,
                FirstName,
@@ -272,7 +272,7 @@ ON PersonCTE.BusinessEntityID = PhoneCTE.BusinessEntityID;
 <br/><br/> To try this in sqlfiddle.com put the first block of code (below) into the schema window and the second block into the 'run sql' window (make sure you're using SQL Server as the DBMS)
 
 * EXAMPLE 1
-```
+```SQL
 WITH vCTE
 AS (SELECT 1 AS N
   UNION ALL
@@ -283,7 +283,7 @@ AS (SELECT 1 AS N
 SELECT N INTO tblCTE FROM vCTE;
 ```
 
-```
+```SQL
 SELECT * FROM tblCTE
 ```
 
