@@ -323,7 +323,8 @@ SELECT * FROM my_cte;
 - [ ] TXT / CSV FILE UPLOAD TO MYSQL
 - [ ] TYPES OF SQL (DDL (CREATE TABLE), DML (SELECT, JOIN, UPDATE), DCL (GRANT ACCESS TO), TCL (TRANSACTION, COMMIT)
 - [ ] NORMALIZATION (1NF, 2NF, 3NF, BCNF) [https://www.youtube.com/watch?v=-WEpWH1NHGU&list=PL-iyibqkl8u22OzA-sbXeTg2Z6nqOKT_l&index=11&t=0s] - SEE Q22
-
+- [ ] ROLLUP
+- [ ] CROSS JOIN
 
 # Useful resources and references
 - https://www.w3schools.com/sql/
