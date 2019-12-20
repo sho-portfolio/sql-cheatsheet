@@ -309,7 +309,21 @@ WITH RECURSIVE my_cte AS
   SELECT 1+n FROM my_cte WHERE n<10
 )
 SELECT * FROM my_cte;
-'''
+```
+
+## create a stored procedure in mySql
+```
+drop procedure if exists load_foo_test_data;
+
+delimiter #
+create procedure load_foo_test_data(v_Str varchar(100))
+begin
+	-- declare v_Str varchar(100) default 'hello world';
+    select v_Str;
+end #
+
+call load_foo_test_data('hi Sho!');
+```
 
 
 # To do
